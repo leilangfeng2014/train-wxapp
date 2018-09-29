@@ -1,0 +1,33 @@
+/* pages/login/login.wxss */
+.login{
+    padding-bottom: 100px;
+}
+
+.logo {
+    display:flex;
+    justify-content:center;
+    background-color:#0087FF;
+}
+
+.logo image{
+    width: 223px;
+    height: 223px;
+
+}
+.login-form{
+    width: 70%;
+    margin: 50px auto 0;
+}
+.section input{
+    padding-left: .5em;
+    height: 36px;
+    border: solid 1px #ccc;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.btn-area{
+    margin-top: 50px;
+    color: #fff;
+    color: #fff;
+}

@@ -1,0 +1,31 @@
+<view class="comment">
+    <view id="messageBox" class="messageBox">
+        <view wx:for="{{ messageList }}" wx:key="this.id">
+            <view class="message {{ item.isStudentSend ? 'heSay':'meSay' }}">
+                <view class="avatar">
+                    <image src="/images/index3.png" ></image>
+                </view>
+                <view class="saybox">
+                    <view class="hd">
+                        <view class="name">
+                            <text wx:if="{{ item.isStudentSend }}">{{item.senderName }}</text>
+                            <text wx:else>我</text>
+                        </view>
+                        <view class="time">
+                            <text>{{ item.createTime }}</text>
+                        </view>
+                    </view>
+                    <view class="saytext">
+                        <text>{{ item.content }}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="sentBox">
+        <view class="sent">
+            <view class="sentinput"><input type="text" value="{{ content }}" placeholder="输入留言内容..." bindinput="contentChange"/></view>
+            <view class="sentbtn"><button size="minni" hover-class="defaultTap" bindtap="sendMessage">发送</button></view>
+        </view>
+    </view>
+</view>

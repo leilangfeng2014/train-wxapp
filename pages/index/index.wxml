@@ -1,0 +1,107 @@
+<view class="box">
+    <view class="info">
+        <view class="infoIn">
+            <view class="person">
+                <text>{{tcardData.name}}</text>
+            </view>
+            <view class="grades">
+                <text>{{tcardData.professionalTitle}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="twoblock">
+        <view class="care" data-status="{{tcardData.afterCare}}" bindtap="toCare">
+            <view>
+                <text>晚托</text>
+            </view>
+            <view>
+                <view  wx:if="{{tcardData.afterCare}}">
+                    <view class="teachTime">
+                        <view>
+                            <text>本次晚托：</text>
+                        </view>
+                        <view>
+                            <text>{{tcardData.afterCare.dateStr}}</text>
+                        </view>
+                    </view>
+                    <view>
+                        <canvas class="cir" style="width:102px; height:102px;" canvas-id="canvasArc">
+                        </canvas>
+                        <view class="cirText">
+                            <view>
+                                <text>完成人数</text>
+                            </view>
+                            <view>
+                                <text>{{tcardData.afterCare.stuCompletedCount}}/{{tcardData.afterCare.stuCount}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:if="{{!tcardData.afterCare}}" class="startCare">
+                    <view class="sign">
+                        <text>还没有晚托</text>
+                    </view>
+                    <view class="btn">
+                        <picker bindchange="bindPickerChange" range="{{numNameArray}}">
+                            <view class="picker">
+                                <button>开启新晚托</button>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="train" bindtap="toTrain">
+            <view class="trainIn">
+                <view>
+                    <text>培训课</text>
+                </view>
+                <view wx:if="{{tcardData.trainCourse}}">
+                    <view>
+                    <view class="myFlex" style="margin-top:24px;">
+                        <view class="timeIcon">
+                            <image src="../../images/calendar.png"></image>
+                        </view>
+                        <view class="iconR">
+                            <view >
+                                <text>{{tcardData.trainCourse.dateStr}}</text>
+                            </view>
+                            <view >
+                                <text>{{tcardData.trainCourse.timeStr}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="myFlex" style="margin-top:24px;">
+                        <view class="teacherIcon">
+                            <image src="../../images/square.png"></image>
+                        </view>
+                        <view class="iconR" style="text-align:left;">
+                            <view>
+                                <text>{{tcardData.trainCourse.teacherName}}</text>
+                            </view>
+                            <view>
+                                <text>{{tcardData.trainCourse.courseItemName}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                </view>
+                <view class="nodata" wx:else>
+                    <view>
+                        <image src="/images/imported.png"></image>
+                    </view>
+                    <view class="nodatatext">还没有培训课程</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="dc">
+        <view class="dc-title">
+            通知:
+        </view>
+        <view class="dc-content">
+            <text wx:if="{{lastMessage.message}}">{{lastMessage.message}}</text>
+            <text wx:else>暂无通知</text>
+        </view>
+    </view>
+</view>

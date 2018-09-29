@@ -1,0 +1,78 @@
+.train{
+    margin: 15px 28px 20px;
+}
+.trainLi{
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid rgba(0,131,255,0.30);
+}
+.hd{
+    height: 40px;
+    background: rgba(0,131,255,0.20);
+    border-radius: 8px;
+    display: flex;
+}
+.name{
+    flex: 1;
+    font-family: PingFangSC-Semibold;
+    font-size: 17px;
+    color: #0083FF;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.teacher{
+    flex: 1;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #0083FF;
+    line-height: 40px;
+    padding-right: 20px;
+    text-align: right
+}
+.trainLiBox{
+    margin: 12px 30px 20px;
+}
+.course{
+    position: relative;
+    margin-bottom: 12px;
+}
+.avatar{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+}
+.avatar image{
+    width: 18px;
+    height: 18px;
+}
+.courseText{
+    padding-left: 30px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #0083FF;
+    line-height: 17px;
+}
+.textHd{
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    color: #0083FF;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.btnBox{
+    display: flex;
+    margin-top: 16px;
+}
+.btnBox button{
+    width: 94px;
+    height: 24px;
+    line-height: 24px;
+    background: #0083FF;
+    border-radius: 3px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+}

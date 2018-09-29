@@ -1,0 +1,58 @@
+<view class="task">
+    <view class="date borderBottom">
+        <text>{{courseList.dateStr}}</text>
+    </view>
+    <view class="objectBox">
+        <view class="hd">
+            <view style="margin-left:10px;padding-top:10px;">
+                <view style="font-family:PingFangSC-Semibold;">
+                    <text>{{courseList.studentName}}</text>
+                </view>
+                <view style="margin-top:4px;">
+                    <text style="margin-right:10px;">{{courseList.schoolName}}</text>
+                    <text >{{courseList.className}}</text>
+                    <text>{{courseList.gradeName}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="object" wx:for="{{workList}}" wx:key="{{item.id}}">
+            <text style="flex:2;font-family:PingFangSC-Semibold;">{{item.subjectName}}</text>
+            <text style="flex:3;">{{item.workName}}</text>
+            <text style="flex:1; text-align: center; font-family:PingFangSC-Semibold;" data-oname="{{item.subjectName}}" data-wname="{{item.workName}}" bindtap="delSigleCourse">删除</text>
+        </view>
+    </view>
+    <view class="setTime">
+        <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+            <view class="picker borderBottom">
+            设置完成时间： {{time}}
+            </view>
+        </picker>
+    </view>
+    <view class="okBtn">
+        <button size="mini" style="margin-right:17px;" bindtap="addObject">添加作业</button>
+        <button size="mini" style="margin-left:17px;" bindtap="submit">完成</button>
+    </view>
+</view>
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">
+        <view>
+            选择科目：
+        </view>
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range-key="name" range="{{objectArray}}">
+            <view class="picker borderBottom">
+            {{objectArray[index].name}}
+            </view>
+        </picker>
+    </view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChange" value="{{workName}}" class="input" placeholder="请输入作业"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>

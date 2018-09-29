@@ -1,0 +1,102 @@
+<view class="train">
+    <view class="trainTeacher trainLi">
+         <view class="hd">
+            <view class="name">
+                <view >
+                    <text>{{tCourseItem.courseName}}</text>
+                </view>
+                <view>
+                    <button disabled="{{signBtn}}" bindtap="checkItem" data-itemid="{{tCourseItem.itemId}}">{{signName}}</button>
+                </view>
+            </view>
+            <view class="teacher">
+                <view>
+                    <text>{{tCourseItem.teacherName}} {{tCourseItem.gradeMemo}} {{tCourseItem.completedItemCount}}/{{tCourseItem.itemCount}}</text>
+                </view>
+                <view>
+                    <text>{{tCourseItem.itemDateStr}}</text>
+                </view>
+                <view>
+                    <text>{{tCourseItem.itemName}}</text>
+                </view>
+
+            </view>
+        </view>
+        <view class=" tbox">
+            <view class="course">
+                <view class="avatar">
+                    <image src="/images/index3.png"></image>
+                </view>
+                <view class="courseText">
+                    <view class="textHd">
+                        <text>下次课程</text>
+                    </view>
+                    <view style="display:flex;margin-top:10px;" wx:for="{{tCourseItem.studentList}}" wx:key="{{item.itemId}}">
+                        <view style="flex:1;">
+                            <view>
+                                <text>{{item.studentName}}</text>
+                            </view>
+                            <view>
+                                <text>{{item.schoolName}} {{item.gradeName}} {{item.className}}</text>
+                            </view>
+                        </view>
+                        <view style="flex:1;">
+                            <radio-group class="radio-group" bindchange="radioChange" data-studentid="{{item.studentId}}"  data-itemid="{{tCourseItem.itemId}}">
+                                <view style="display:flex;margin-left:16px;margin-top:5px;">
+                                    <view>
+                                        来了 <radio  value="1" checked="{{item.checked1}}"/>
+                                    </view>
+                                    <view>
+                                        请假 <radio  value="2" checked="{{item.checked2}}"/>
+                                    </view>
+                                </view>
+                            </radio-group>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="course">
+                <view class="avatar">
+                    <image src="/images/care3.png"></image>
+                </view>
+                <view class="courseText">
+                    <view class="textHd">
+                        <text>作业</text>
+                    </view>
+                    <view style="display:flex;margin-top:10px;">
+                        <view style="flex:1;">
+                            <view wx:for="{{tCourseItem.workList}}" wx:key="{{item.id}}">
+                                <text>{{item.name}}</text>
+                            </view>
+                        </view>
+                        <view style="flex:1;">
+                            <button data-itemid="{{tCourseItem.itemId}}" bindtap="addTask">布置作业</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="btnBox">
+            <button bindtap="prevItemForCheck" data-cid="{{tCourseItem.itemId}}">上次课</button>
+            <button bindtap="toTimeTable" data-courseid="{{tCourseItem.courseId}}">查看课表</button>
+            <button bindtap="nextItemForCheck" data-cid="{{tCourseItem.itemId}}">下次课</button>
+        </view >
+    </view>
+</view>
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">
+        <text>添加作业</text>
+    </view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChange" value="{{workName}}" class="input" placeholder="请输入作业"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>

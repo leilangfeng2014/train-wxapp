@@ -1,0 +1,67 @@
+.userlist{
+    margin: 10px;
+}
+
+.message {
+    position: relative;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.avatar {
+    display: flex;
+    float: left;
+    height: 60px;
+    width: 60px;
+    border: 1px solid #0083FF;
+    border-right: 0;
+    background-color: #0083FF;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar image{
+    height: 24px;
+    width: 24px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+.saybox {
+    margin-left: 60px;
+    height: 60px;
+    border: 1px solid #0083FF;
+
+}
+
+.hd{
+    font-size: 14px;
+    line-height: 20px;
+    font-family: PingFangSC-Regular;
+    color: #0083FF;
+    margin: 0 10px;
+    display: flex;
+    padding-top: 5px;
+}
+
+.hd .name{
+    font-family: PingFangSC-Semibold;
+    font-size: 16px;
+    color: #0083FF;
+    text-align: left;
+}
+
+.hd .time{
+    flex: 4;
+    text-align: right
+}
+
+.saytext {
+    font-size: 14px;
+    line-height: 20px;
+    color: #0083FF;
+    padding: 10px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

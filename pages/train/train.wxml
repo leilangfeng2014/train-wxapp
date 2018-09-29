@@ -1,0 +1,55 @@
+<view class="train">
+    <view wx:if="{{!tTrainList || tTrainList.length==0}}" style="text-align:center;">
+        <text>暂无数据</text>
+    </view>
+    <view wx:if="{{tTrainList.length>0}}">
+        <view class="trainLi"  wx:for="{{tTrainList}}" wx:key="{{item.courseId}}">
+            <view class="hd">
+                <view class="name">
+                    <text>{{item.courseName}}</text>
+                </view>
+                <view class="teacher">
+                    <text>{{item.teacherName}} {{item.gradeMemo}} {{item.completedItemCount}}/{{item.itemCount}}</text>
+                </view>
+            </view>
+            <view class="trainLiBox">
+                <view class="course">
+                    <view class="avatar">
+                        <image src="/images/time.png"></image>
+                    </view>
+                    <view class="courseText">
+                        <view class="textHd">
+                            <text>即将开始的课程</text>
+                        </view>
+                        <view>
+                            <text>{{item.nextItem.nextItemdateStr}}</text>
+                        </view>
+                        <view>
+                            <text>{{item.nextItem.nextItemName}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="course">
+                    <view class="avatar">
+                        <image src="/images/care3.png"></image>
+                    </view>
+                    <view class="courseText">
+                        <view class="textHd">
+                            <text>作业</text>
+                        </view>
+                        <view wx:for="{{item.nextWorkList}}" wx:for-item="items" wx:key="{{items.id}}">
+                            <view>
+                                <text>{{items.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="btnBox">
+                    <button bindtap="toTimeTable" data-courseid="{{item.courseId}}">查看课表</button>
+                    <button bindtap="toTrainDetail" data-itemid="{{item.nextItem.nextItemId}}">去打卡</button>
+                </view >
+            </view>
+        </view>    
+    </view>
+    
+</view>

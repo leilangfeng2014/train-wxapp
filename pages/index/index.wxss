@@ -1,0 +1,153 @@
+.box{
+    margin: 15px;
+}
+.info{
+    height: 185px;
+    width: 100%;
+    background: rgba(0,131,255,0.20);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-family: PingFangSC-Semibold;
+    color: #0083FF;
+    text-align: left;
+}
+.infoIn{
+    padding: 20px 24px;
+}
+.infoIn .person{
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 85px;
+}
+.infoIn .grades{
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 10px;
+}
+.twoblock{
+    display: flex;
+}
+.twoblock .care{
+    flex: 1;
+    height: 180px;
+    background: rgba(0,131,255,0.20);
+    border-radius: 8px;
+    margin-right: 10px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: PingFangSC-Semibold;
+    font-size: 16px;
+    color: #0083FF;
+    position: relative;
+}
+.twoblock .train{
+    flex: 1;
+    height: 200px;
+    background: rgba(0,131,255,0.20);
+    border-radius: 8px;
+    margin-left: 10px;
+}
+.trainIn{
+    padding: 20px;
+    color: #0083FF;
+}
+.timeIcon{
+    flex: 1;
+    text-align: center;
+}
+.timeIcon image{
+    width: 18px;
+    height: 20px;
+}
+.teacherIcon{
+    flex: 1;
+    text-align: center;
+}
+.teacherIcon image{
+    width: 18px;
+    height: 20px;
+}
+.iconR{
+    flex: 4;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    letter-spacing: 0.36px;
+    text-align: center;
+}
+.dc{
+    width: 100%;
+    height: 118px;
+    margin-top: 15px;
+    background: rgba(0,131,255,0.20);
+    border-radius: 8px;
+    color: #0083FF;
+    font-family: PingFangSC-Semibold;
+    font-size: 16px;
+    color: #0083FF;
+}
+
+.dc-title {
+    text-align: left;
+    padding: 5px 10px;
+
+}
+.dc-content {
+    text-align: center;
+    padding: 10px 10px;
+}
+.teachTime{
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #0083FF;
+    text-align: left;
+    line-height: 17px;
+    margin-left: 10px;
+}
+.teachTime1{
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #0083FF;
+    letter-spacing: 0.36px;
+    text-align: center;
+}
+.startCare{
+    text-align: center;
+}
+.startCare .sign{
+    margin-top: 20px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #0083FF;
+    text-align: left;
+    line-height: 22px;
+    text-align: center;
+}
+.startCare .btn{
+    margin: 30px 20px 0;
+}
+.startCare .btn button{
+    font-size: 16px;
+    font-family: PingFangSC-Regular;
+    background: #0083FF;
+    height: 52px;
+    line-height: 52px;
+    border-radius: 3px;
+    color: #FFFFFF;
+}
+
+.nodata {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:30px;
+}
+
+.nodata image {
+    width: 40px;
+    height: 40px;
+}
+
+.nodatatext {
+    font-size:14px;
+    padding-top: 20px;
+}

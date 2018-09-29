@@ -1,0 +1,28 @@
+<view class="userlist">
+    <view wx:if="{{!studentList || studentList.length==0}}" style="text-align:center;">
+        <text>暂无数据</text>
+    </view>
+    <view wx:if="{{studentList.length>0}}">
+        <view wx:for="{{ studentList }}" wx:key="{{ item.studentId}}">
+            <view class="message" data-studentid="{{ item.studentId }}"  bindtap="toSendMessage">
+                <view class="avatar">
+                    <image src="/images/index.png" ></image>
+                </view>
+                <view class="saybox">
+                    <view class="hd">
+                        <view class="name">
+                            <text>{{ item.studentName }}</text>
+                        </view>
+                        <view class="time">
+                            <text>{{ item.createTimeStr }}</text>
+                        </view>
+                    </view>
+                    <view class="saytext">
+                        <text>{{ item.lastMessage }}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+</view>

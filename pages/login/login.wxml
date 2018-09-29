@@ -1,0 +1,21 @@
+<view class="login">
+    <view class="logo">
+        <image  src="/images/logo.png" mode="widthFix"></image>
+    </view>
+    <view style="text-align: center;">
+        <text>{{ message }}</text>
+    </view>
+    <view class="login-form">
+        <form bindsubmit="formSubmit">
+            <view class="section">
+                <input name="userName" type="text" placeholder="账号" />
+            </view>
+            <view class="section">
+                <input name="password" type="password" placeholder="密码" />
+            </view>
+            <view class="btn-area">
+                <button class="bColor" formType="submit">登录</button>
+            </view>
+        </form>
+    </view>
+</view>

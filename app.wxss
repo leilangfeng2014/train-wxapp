@@ -1,0 +1,49 @@
+
+.pull-left{float: left;}
+.pull-right{float: right;}
+.clearfix {zoom: 1; }
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.clearfix:after {clear: both;}
+
+.bColor{
+    background: #0083FF;
+    color: #fff;
+}
+.fColor{
+    color: #0083FF;
+}
+.myFlex{
+    display: flex;
+}
+.cir{
+    display: inline-block; 
+    /* margin-top: 20rpx; */
+}
+.cirText{
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    color: #0083FF;
+    letter-spacing: 0.36px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top:125px;
+    width: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+.borderBottom{
+    text-decoration:underline;
+    color: #0083FF;
+}

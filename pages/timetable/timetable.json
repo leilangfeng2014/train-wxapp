@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "课程表",
+    "navigationBarBackgroundColor": "#0083FF",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": false
+}

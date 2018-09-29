@@ -1,0 +1,61 @@
+<view class="care">
+    <view wx:if="{{!tCareList}}" style="text-align:center;">
+        <text>暂无数据</text>
+    </view>
+    <view wx:if="{{tCareList}}">
+        <view style="height:36px;overflow:hidden;text-align:center;">
+            <text class="borderBottom">{{tCareList.dateStr}}</text>
+        </view>
+        <view class="student" data-studentid="{{item.studentId}}" bindtap="toDetail" wx:for="{{tCareList.studentList}}" wx:key="{{item.studentId}}">
+            <view class="process">
+                <view wx:if="{{item.workCount}}">
+                    <canvas class="cir" style="width:80px; height:80px;" canvas-id="canvasArc{{item.studentId}}"></canvas>
+                    <view class="cirText">
+                        <view>
+                            <text>作业进度</text>
+                        </view>
+                        <view>
+                            <text>{{item.completedWorkCount}}/{{item.workCount}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view  wx:if="{{!item.workCount}}">
+                    <view class="cirText" style="top:20px;">
+                        <view>
+                            <text>找不到作业</text>
+                        </view>
+                        <view>
+                            <text>信息</text>
+                        </view>
+                        <view>
+                            <button bindtap="defaultTap">录作业</button>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+            <view class="stext">
+                <view class="name">
+                    <view>
+                        <text>{{item.studentName}}</text>
+                    </view>
+                    <view style="font-size:12px;line-height:17px;">
+                        <text style="margin-right:20px;">{{item.schoolName}}</text>
+                        <text>{{item.gradeName}}{{item.className}}</text>
+                    </view>
+                </view>
+                <view class="time">
+                    <view>
+                        <text>预计完成时间：</text>
+                    </view>
+                    <view wx:if="{{item.predictCompleteTime}}">
+                        <text>{{item.predictCompleteTime}}</text>
+                    </view>
+                    <view wx:if="{{!item.predictCompleteTime}}">
+                        <text>-</text>
+                    </view>
+                </view>
+            </view>
+        </view>    
+    </view>
+</view>

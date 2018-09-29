@@ -1,0 +1,26 @@
+<view class="train">
+    <view class="trainLi">
+        <view class="hd">
+            <view class="name">
+                <text>{{tableList.courseName}}</text>    
+            </view>
+            <view class="teacher">
+                <text>{{tableList.teacherName}} {{tableList.gradeMemo}} {{tableList.completedItemCount}}/{{tableList.itemCount}}</text>   
+            </view>
+        </view>
+        <view class="trainLiBox">
+            <view class="tlist tbd">
+                <text style="flex:1;">序号</text>
+                <text style="flex:3;">上课日期</text>
+                <text style="flex:1;">状态</text>
+            </view>
+            <view>
+                <view class="tlist" wx:for="{{tableList.itemList}}" wx:key="{{item.idx}}">
+                    <text style="flex:1;">{{item.idx}}</text>
+                    <text style="flex:3;">{{item.startTime}}</text>
+                    <text style="flex:1;">{{item.statusName}}</text>
+                </view>    
+            </view>
+        </view>
+    </view>
+</view>

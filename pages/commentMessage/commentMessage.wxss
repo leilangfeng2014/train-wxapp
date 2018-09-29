@@ -1,0 +1,100 @@
+.comment{
+  /* margin: 50px 0; */
+  padding-bottom: 60px;
+}
+.messageBox{
+  margin: 20px 30px 19px;
+}
+.message{
+  position: relative;
+  margin-top: 15px;
+}
+.avatar{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+}
+.avatar image{
+  width: 18px;
+  height: 18px;
+}
+.heSay .avatar{
+  left: 0;
+}
+.meSay .avatar{
+  right: 0;
+}
+.saybox{
+  min-height: 60px;
+  padding: 10px 0;
+  border: 1px solid #0083FF;
+}
+.heSay .saybox{
+  margin-left: 30px;
+}
+.meSay .saybox{
+  margin-right: 30px;
+}
+.hd{
+  font-size: 14px;
+  line-height: 20px;
+  font-family: PingFangSC-Regular;
+  color: #0083FF;
+  margin: 0 10px;
+  display: flex;
+}
+.hd .name{
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #0083FF;
+  flex: 1;
+  text-align: left;
+}
+.hd .time{
+  flex: 4;
+  text-align: right
+}
+.saytext{
+  font-size: 14px;
+  line-height: 20px;
+  color: #0083FF;
+  padding: 10px;
+}
+.sentBox{
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.sent{
+  height: 34px;
+  margin: 0 23px;
+  display: flex;
+  padding: 19px 0;
+}
+.sentinput{
+  flex: 7;
+}
+.sentinput input{
+  border: 1px solid #ccc;
+  line-height: 34px;
+  height: 34px;
+  padding-left: .5em;
+  border-radius: 3px 0 0 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+}
+.sentbtn{
+  flex: 2;
+}
+.sentbtn button{
+  background: #0083FF;
+  height: 36px;
+  border-radius: 0 5px 5px 0;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}

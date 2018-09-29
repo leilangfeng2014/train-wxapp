@@ -1,0 +1,55 @@
+.train{
+    margin: 20px 24px;
+
+}
+.trainLi{
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid rgba(0,131,255,0.20);
+}
+.hd{
+    height: 40px;
+    background: rgba(0,131,255,0.20);
+    border-radius: 8px;
+    display: flex;
+}
+.name{
+    flex: 1;
+    font-family: PingFangSC-Semibold;
+    font-size: 17px;
+    color: #0083FF;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.teacher{
+    flex: 1;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #0083FF;
+    line-height: 40px;
+    padding-right: 20px;
+    text-align: right
+}
+.trainLiBox{
+    padding: 0 10px;
+}
+.tlist{
+    display: flex;
+}
+.tlist text{
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #0083FF;
+    line-height: 20px;
+}
+.tbd{
+    margin-top: 16px;
+    margin-bottom: 14px;
+}
+.tbd text{
+    font-family: PingFangSC-Semibold;
+}

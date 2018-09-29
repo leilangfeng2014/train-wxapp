@@ -1,0 +1,110 @@
+<view class="care">
+    <view style="height:36px;overflow:hidden;">
+        <picker mode="date" value="{{nowDay}}" start="2018-01-01" end="2030-01-01" bindchange="bindTimeChange">
+            <view class="picker borderBottom">
+                {{careItem.dayRange ? careItem.dayRange : '请选择日期'}}
+            </view>
+        </picker>
+    </view>
+    <view wx:if="{{careItem}}">
+        <view class="student">
+            <view class="process">
+                <canvas class="cir" style="width:80px; height:80px;" canvas-id="canvasArc"> </canvas>
+                <view class="cirText">
+                    <view>
+                        <text>作业进度</text>
+                    </view>
+                    <view>
+                        <text>{{careItem.workCompletedCount}}/{{careItem.workCount}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="stext">
+                <view class="name">
+                    <view>
+                        <text>{{careItem.studentName}}</text>
+                    </view>
+                    <view style="font-size:12px;line-height:17px;">
+                        <text>{{careItem.schoolName}}  {{careItem.gradeName}}{{careItem.gradeName.className}}</text>
+                    </view>
+                </view>
+                <view class="time">
+                    <view>
+                        <text>预计完成时间：</text>
+                    </view>
+                    <view>
+                        <text wx:if="{{careItem.predictCompleteTime}}">{{careItem.predictCompleteTime}}</text>
+                        <text wx:if="{{!careItem.predictCompleteTime}}">-</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="course" wx:for="{{careItem.subjectList}}" wx:key="{{item.name}}">
+            <view class="courseHd">
+                <view style="flex:1">
+                    <text>{{item.name}}</text>
+                </view>
+                <view style="flex:1;text-align: right;">
+                    <text>{{item.workCompletedCount}}/{{item.workCount}}</text>
+                </view>
+            </view>
+            <view>
+                <view class="chapter" wx:for="{{item.workList}}" wx:for-item="workItem" wx:key="{{workItem.id}}">
+                    <view style="flex:2">
+                        <block>
+                            <image wx:if="{{workItem.isCompleted === 1}}" src="/images/complete.png"></image>
+                        </block>
+                        <text>{{workItem.workName}}</text>
+                    </view>
+                    <view style="flex:1;text-align: center;">
+                        <view wx:if="{{workItem.isCompleted === 1}}">
+                            <text>{{workItem.rate}}</text>
+                        </view>
+                        <view wx:else>
+                            <view style="height:36px;overflow:hidden;">
+                                <picker mode="selector" data-workid="{{workItem.id}}" range="{{rateList}}"  bindchange="bindRateChange">
+                                    <button class="complete">完成</button>
+                                </picker>
+                            </view>
+
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+
+        <view class="course">
+            <view style="margin:12px;">
+                <view class="curTile">
+                    <text>评语: </text>
+                </view>
+                <view class="curTileText">
+                    <text wx:if="{{careItem.comment}}">{{careItem.comment}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="btnBox">
+            <button style="margin-right:17px;" size="mini" data-aid="{{careItem.afterCareId}}" bindtap="totask">修改作业</button>
+            <button style="margin-left:17px;" size="mini" data-cid="{{careItem.afterCareId}}" bindtap="writeSay">写评语</button>
+        </view>
+    </view>
+    <view class="nodata" wx:else>暂无数据</view>
+</view>
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">
+        <text>写评语</text>
+    </view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChange" value="{{comment}}" class="input" placeholder="写评语"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>

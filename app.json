@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/launch/launch",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/care/care",
+    "pages/careDetail/careDetail",
+    "pages/train/train",
+    "pages/trainDetail/trainDetail",
+    "pages/timetable/timetable",
+    "pages/task/task",
+    "pages/comment/comment",
+    "pages/set/set",
+    "pages/commentMessage/commentMessage"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "时创教育"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#fff",
+    "borderStyle": "white",
+    "backgroundColor": "#0083FF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_index.png",
+        "selectedIconPath": "images/tab_index2.png",
+        "text":"我"
+      },
+      {
+        "pagePath": "pages/care/care",
+        "iconPath": "images/tab_care.png",
+        "selectedIconPath": "images/tab_care2.png",
+        "text":"晚托"
+      },
+      {
+        "pagePath": "pages/train/train",
+        "iconPath": "images/tab_train.png",
+        "selectedIconPath": "images/tab_train2.png",
+        "text":"培训"
+      },
+      {
+        "pagePath": "pages/comment/comment",
+        "iconPath": "images/tab_message.png",
+        "selectedIconPath": "images/tab_message2.png",
+        "text":"留言板"
+      },
+      {
+        "pagePath": "pages/set/set",
+        "iconPath": "images/tab_set.png",
+        "selectedIconPath": "images/tab_set2.png",
+        "text":"设置"
+      }
+    ]
+  }
+}
